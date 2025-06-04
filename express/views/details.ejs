@@ -4,15 +4,16 @@
   <body>
     <%- include("./partials/nav.ejs") %>
 
-    <div class="details content">
-      <h2><%= blog.title %></h2>
-      <div class="content">
-        <p><%= blog.body %></p>
+    <div class="max-w-[1024px] mx-auto py-10 px-5">
+      <h2 class="text-3xl md:text-4xl lg:5xl font-bold text-[#644a40] mb-5">
+        <%= blog.title %>
+      </h2>
+      <div class="space-y-3">
+        <h3 class="italic text-[#646464]">"<%= blog.snippet %>"</h3>
+        <p class="text-[#202020]"><%= blog.body %></p>
       </div>
-      <a class="delete" data-doc="<%= blog._id %>">delete</a>
+      <!-- <a class="" data-doc="<%= blog._id %>">delete</a> -->
     </div>
-
-    <%- include("./partials/footer.ejs") %>
 
     <script>
       const trashcan = document.querySelector("a.delete");

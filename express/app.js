@@ -4,7 +4,8 @@ import morgan from "morgan";
 // db
 import connectDB from "./utils/db.js";
 
-import BlogModel from "./models/blog-model.js";
+// routes
+import blogRouter from "./routes/blog-route.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -31,57 +32,7 @@ app.get("/about", (req, res) => {
 });
 
 // blog routes
-app.get("/blogs", (req, res) => {
-  BlogModel.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      res.render("index", { title: "All Blogs", blogs: result });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.post("/blogs", (req, res) => {
-  const blog = new BlogModel(req.body);
-
-  blog
-    .save()
-    .then((result) => {
-      res.redirect("/blogs");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.get("/blogs/:blogId", (req, res) => {
-  const blogId = req.params.blogId;
-
-  BlogModel.findById(blogId)
-    .then((result) => {
-      res.render("details", { title: "Blog details", blog: result });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.delete("/blogs/:blogId", (req, res) => {
-  const blogId = req.params.blogId;
-
-  BlogModel.findByIdAndDelete(blogId)
-    .then((result) => {
-      res.json({ redirect: "/blogs" });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.get("/blogs/create", (req, res) => {
-  res.render("create", { title: "Create" });
-});
+app.use("/blogs", blogRouter);
 
 // 404 page
 app.use((req, res) => {

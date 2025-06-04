@@ -2,28 +2,41 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
   <body>
-    <div class="not-found content">
-      <h2>404 | Page Not Found</h2>
+    <div
+      class="flex justify-center items-center h-dvh max-w-[1024px] mx-auto py-10 px-5"
+    >
+      <div class="flex flex-col gap-5">
+        <h2
+          class="text-center text-3xl md:text-4xl lg:5xl font-bold text-[#644a40]"
+        >
+          404 | Page Not Found
+        </h2>
 
-      <p>Oops! Looks like you&apos;ve wandered off the path.</p>
-      <p>
-        The page you&apos;re looking for doesn&apos;t exist or might have been
-        moved.
-      </p>
+        <p class="text-center text-[#646464] text-sm">
+          Oops! Looks like you&apos;ve wandered off the path.
+        </p>
+        <p class="text-[#202020]">
+          The page you&apos;re looking for doesn&apos;t exist or might have been
+          moved.
+        </p>
 
-      <div>
-        <h4>But don&apos;t worry — here are a few things you can do:</h4>
-        <ul>
-          <li><a href="/">Go back to the homepage</a></li>
-          <li>
-            <a href="/contact"
-              >Contact me if you think something&apos;s broken</a
-            >
-          </li>
-        </ul>
+        <div class="text-[#202020] space-y-2">
+          <h4 class="font-medium">
+            But don&apos;t worry — here are a few things you can do:
+          </h4>
+          <ul>
+            <li>
+              <a href="/" class="text-[#644a40] underline underline-offset-4"
+                >Go back to the homepage</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-center text-[#646464] text-xs">
+          Thanks for dropping by anyway! 👋
+        </p>
       </div>
-
-      <p>Thanks for dropping by anyway! 👋</p>
     </div>
   </body>
 </html>

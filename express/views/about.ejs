@@ -4,37 +4,47 @@
   <body>
     <%- include("./partials/nav.ejs") %>
 
-    <div class="blogs content">
-      <h2>About This Blog</h2>
+    <div class="max-w-[1024px] mx-auto py-10 px-5">
+      <h2
+        class="text-center lg:text-left text-3xl md:text-4xl lg:5xl font-bold text-[#644a40] mb-2"
+      >
+        About This Blog
+      </h2>
 
-      <h3>Welcome to my blog!</h3>
+      <h3
+        class="text-center lg:text-left mb-5 text-sm md:text-base text-[#646464]"
+      >
+        Welcome to my blog!
+      </h3>
 
-      <p>
-        This is my personal space on the internet where I document my learning
-        journey, share coding insights, and explore topics that interest
-        me—mainly web development, new tech trends, and occasional reflections
-        on productivity and growth.
-      </p>
+      <div class="text-[#202020] space-y-4">
+        <p>
+          This is my personal space on the internet where I document my learning
+          journey, share coding insights, and explore topics that interest
+          me—mainly web development, new tech trends, and occasional reflections
+          on productivity and growth.
+        </p>
 
-      <div>
-        <h4>I created this blog as a way to:</h4>
-        <ul>
-          <li>Practice building real-world applications.</li>
-          <li>Track my progress as a developer.</li>
-          <li>Share knowledge that might help others on a similar path.</li>
-        </ul>
+        <div class="space-y-3">
+          <h4 class="font-medium">I created this blog as a way to:</h4>
+          <ul class="list-disc ml-5">
+            <li>Practice building real-world applications.</li>
+            <li>Track my progress as a developer.</li>
+            <li>Share knowledge that might help others on a similar path.</li>
+          </ul>
+        </div>
+
+        <p>
+          Whether you're a fellow developer, a curious learner, or someone who
+          stumbled upon this page by accident—thanks for stopping by. I hope you
+          find something helpful or interesting here.
+        </p>
+
+        <p>
+          Feel free to connect with me if you have questions, suggestions, or
+          just want to say hi!
+        </p>
       </div>
-
-      <p>
-        Whether you're a fellow developer, a curious learner, or someone who
-        stumbled upon this page by accident—thanks for stopping by. I hope you
-        find something helpful or interesting here.
-      </p>
-
-      <p>
-        Feel free to connect with me if you have questions, suggestions, or just
-        want to say hi!
-      </p>
     </div>
 
     <%- include("./partials/footer.ejs") %>

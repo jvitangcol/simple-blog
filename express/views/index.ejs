@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("./partials/head.ejs") %>
-  <body>
+  <body class="bg-[#f9f9f9]">
     <%- include("./partials/nav.ejs") %>
 
-    <div class="about content">
-      <h2>All Blogs</h2>
+    <div class="max-w-[1024px] mx-auto px-5 py-10">
+      <h2
+        class="font-bold text-[#644a40] text-2xl md:text-3xl lg:text-4xl mb-5"
+      >
+        All Blogs
+      </h2>
 
-      <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
-      <a class="single" href="/blogs/<%= blog._id %>">
-        <h3 class="title"><%= blog.title %></h3>
-        <p class="snippet"><%= blog.snippet %></p>
-      </a>
-      <% }) %> <% } else { %>
-      <p>There are no blogs to display...</p>
-      <% } %>
+      <div class="flex flex-col gap-5">
+        <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+        <a
+          class="flex flex-col p-6 gap-2 rounded-lg border border-[#d8d8d8]"
+          href="/blogs/<%= blog._id %>"
+        >
+          <h3 class="text-[#202020] font-semibold text-xl md:text-2xl">
+            <%= blog.title %>
+          </h3>
+          <p class="text-sm md:text-base text-[#646464]"><%= blog.snippet %></p>
+        </a>
+        <% }) %> <% } else { %>
+        <p class="text-sm md:text-base text-[#646464]">
+          There are no blogs to display...
+        </p>
+        <% } %>
+      </div>
     </div>
 
     <%- include("./partials/footer.ejs") %>
