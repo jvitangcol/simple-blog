@@ -5,6 +5,18 @@
     <%- include("./partials/nav.ejs") %>
 
     <div class="max-w-[1024px] mx-auto py-10 px-5">
+      <div class="flex justify-between mb-5">
+        <button class="bg-[#644a40] text-[#ffffff] rounded-lg px-4 py-2">
+          <a href="/blogs"> <i data-lucide="move-left"></i></a>
+        </button>
+
+        <button class="bg-[#e54d2e] text-[#ffffff] rounded-lg px-4 py-2">
+          <a class="delete" data-doc="<%= blog._id %>"
+            ><i data-lucide="trash-2"></i
+          ></a>
+        </button>
+      </div>
+
       <h2 class="text-3xl md:text-4xl lg:5xl font-bold text-[#644a40] mb-5">
         <%= blog.title %>
       </h2>
@@ -12,10 +24,12 @@
         <h3 class="italic text-[#646464]">"<%= blog.snippet %>"</h3>
         <p class="text-[#202020]"><%= blog.body %></p>
       </div>
-      <!-- <a class="" data-doc="<%= blog._id %>">delete</a> -->
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
+      lucide.createIcons();
       const trashcan = document.querySelector("a.delete");
 
       trashcan.addEventListener("click", (e) => {
